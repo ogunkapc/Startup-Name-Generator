@@ -29,6 +29,12 @@ class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 17);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   final wordPair = WordPair.random();
+  //   return Text(wordPair.asPascalCase);
+  // }
+
   @override
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
@@ -36,7 +42,9 @@ class _RandomWordsState extends State<RandomWords> {
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
-        if (i.isOdd) return const Divider();
+        if (i.isOdd) {
+          return const Divider();
+        }
 
         final index = i ~/
             2; //? i ~/ 2 divides i by 2 and returns an integer result. For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
